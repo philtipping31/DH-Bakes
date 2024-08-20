@@ -1,0 +1,89 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/bg-image.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #ffffff;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.logo-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.text-bg {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255, 0.8);
+}
+
+.shop-now-button {
+    background: rgb(244, 5, 149);
+    color: rgb(255, 255, 255);
+    min-width: 260px;
+}
+
+.btn-pink {
+    background: rgb(244, 5, 149);
+    color: white;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-pink:hover,
+.btn-pink:active,
+.btn-pink:focus {
+    background: rgb(203, 4, 124);
+    color: white;
+}
+
+.text-pink {
+    color: rgb(244, 5, 149) !important;
+}
+
+.border-pink {
+    border: 1px solid rgb(244, 5, 149) !important;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
