@@ -64,6 +64,17 @@ body {
     border: 1px solid rgb(244, 5, 149) !important;
 }
 
+/* Main Nav */
+
+#account a {
+    color: rgb(244, 5, 149);
+}
+
+#main-nav a {
+    color: rgb(244, 5, 149);
+}
+
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
