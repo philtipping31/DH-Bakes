@@ -102,6 +102,20 @@ body {
     border: 1px solid rgb(244, 5, 149);
 }
 
+/* Product Detail */
+
+.product-name {
+    font-size: larger;
+}
+
+.product-price {
+    font-size: large;
+}
+
+.shadow {
+    box-shadow: 5px 5px 5px;
+}
+
 
 /* -------------------------------- Media Queries */
 
@@ -124,5 +138,16 @@ body {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 90px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
     }
 }
