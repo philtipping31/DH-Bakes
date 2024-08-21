@@ -60,6 +60,10 @@ body {
     color: rgb(244, 5, 149) !important;
 }
 
+.text-black {
+    color: black;
+}
+
 .border-pink {
     border: 1px solid rgb(244, 5, 149) !important;
 }
@@ -75,6 +79,27 @@ body {
 
 #main-nav a {
     color: rgb(244, 5, 149);
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
+
+/* Product Images */
+
+.fixed-img-size {
+    width: 380px;
+    height: 280px
+}
+
+.product-img-hover:hover {
+    border: 1px solid rgb(244, 5, 149);
 }
 
 
