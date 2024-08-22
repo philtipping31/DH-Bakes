@@ -35,6 +35,10 @@ body {
     background-color: rgb(255, 255, 255, 0.8);
 }
 
+.text-large {
+    font-size: large;
+}
+
 .shop-now-button {
     background: rgb(244, 5, 149);
     color: rgb(255, 255, 255);
