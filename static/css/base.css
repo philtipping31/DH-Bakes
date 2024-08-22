@@ -75,6 +75,22 @@ body {
 .about {
     font-size: 180%;
 }
+
+.btt-button {
+    color: rgb(244, 5, 149);
+    height: 42px;
+    width: 42px;
+    
+}
+
+.btt-button:hover {
+    color: #ffffff;
+    background-color: rgb(244, 5, 149);
+}
+
+.btt-link {
+    cursor: pointer;
+}
 /* Main Nav */
 
 .menu-hover:hover {
@@ -157,5 +173,20 @@ body {
 
     body {
         height: calc(100vh - 116px);
+    }
+
+}
+
+
+@media (min-width: 700px){
+    .btt-button {
+        color: rgb(244, 5, 149);
+        height: 42px;
+        width: 42px;
+    }
+
+    .btt-button:hover {
+        color: #ffffff;
+        background-color: rgb(244, 5, 149);
     }
 }

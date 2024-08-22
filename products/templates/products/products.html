@@ -113,4 +113,51 @@
             </div>
         </div>
     </div>
+    <div class="btt-button shadow-sm border border-pink" style="display: none; position: fixed; bottom: 6px; right: 6px; z-index: 1000;">
+        <a class="rounded-1 btt-link d-flex h-100">
+            <i class="fa-solid fa-arrow-up-from-bracket mx-auto my-auto"></i>
+        </a>	
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+
+    <script type="text/javascript">
+        // Scroll to top when .btt-link is clicked
+        $(document).on('click', '.btt-link', function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 'fast');
+        });
+
+        // Show or hide the scroll-to-top button when scrolling
+        $(document).ready(function() {
+            var $scrollButton = $('.btt-button');
+
+            $(window).on('scroll', function() {
+                if ($(this).scrollTop() > 200) {
+                    $scrollButton.fadeIn();
+                } else {
+                    $scrollButton.fadeOut();
+                }
+            });
+
+            $('#sort-selector').on('change', function() {
+                var selectedVal = $(this).val();
+                var currentUrl = new URL(window.location.href);
+
+                if (selectedVal && selectedVal !== "reset") {
+                    var [sort, direction] = selectedVal.split("_");
+
+                    currentUrl.searchParams.set("sort", sort);
+                    currentUrl.searchParams.set("direction", direction);
+                } else {
+                    currentUrl.searchParams.delete("sort");
+                    currentUrl.searchParams.delete("direction");
+                }
+
+                window.location.href = currentUrl.href;
+            });
+        });
+    </script>
 {% endblock %}
