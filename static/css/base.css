@@ -73,6 +73,10 @@ body {
 }
 /* Main Nav */
 
+.menu-hover:hover {
+    text-decoration: underline rgb(244, 5, 149);
+}
+
 #account a {
     color: rgb(244, 5, 149);
 }

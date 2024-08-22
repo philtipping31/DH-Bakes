@@ -17,7 +17,7 @@
                 Cupcakes
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="cupcakes-link">
-                <a href="" class="dropdown-item">All Cupcakes</a>
+                <a href="{% url 'products' %}?category=all_cupcakes" class="dropdown-item">All Cupcakes</a>
             </div>
         </li>
 
@@ -26,9 +26,10 @@
                 Cookies
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="cookies-link">
-                <a href="" class="dropdown-item">Small Cookies</a>
-                <a href="" class="dropdown-item">Stuffed Cookies</a>
-                <a href="" class="dropdown-item">Large Cookies</a>
+                <a href="{% url 'products' %}?category=small_cookies" class="dropdown-item">Small Cookies</a>
+                <a href="{% url 'products' %}?category=stuffed_cookies" class="dropdown-item">Stuffed Cookies</a>
+                <a href="{% url 'products' %}?category=large_cookies" class="dropdown-item">Large Cookies</a>
+                <a href="{% url 'products' %}?category=small_cookies,stuffed_cookies,large_cookies" class="dropdown-item">All Cookies</a>
             </div>
         </li>
 
@@ -37,10 +38,11 @@
                 Cakes
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="cakes-link">
-                <a href="" class="dropdown-item">Single Tier</a>
-                <a href="" class="dropdown-item">Two Tier</a>
-                <a href="" class="dropdown-item">Three Tier</a>
-                <a href="" class="dropdown-item">Cheesecakes</a>
+                <a href="{% url 'products' %}?category=single_tier" class="dropdown-item">Single Tier</a>
+                <a href="{% url 'products' %}?category=two_tier" class="dropdown-item">Two Tier</a>
+                <a href="{% url 'products' %}?category=three_tier" class="dropdown-item">Three Tier</a>
+                <a href="{% url 'products' %}?category=cheesecakes" class="dropdown-item">Cheesecakes</a>
+                <a href="{% url 'products' %}?category=single_tier,two_tier,three_tier,cheesecakes" class="dropdown-item">All Cakes</a>
             </div>
         </li>
 
@@ -49,9 +51,9 @@
                 Occasions
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="occasions-link">
-                <a href="" class="dropdown-item">Birthdays</a>
-                <a href="" class="dropdown-item">Easter</a>
-                <a href="" class="dropdown-item">Custom</a>
+                <a href="{% url 'products' %}?category=birthdays" class="dropdown-item">Birthdays</a>
+                <a href="{% url 'products' %}?category=easter" class="dropdown-item">Easter</a>
+                <a href="{% url 'products' %}?category=custom" class="dropdown-item">Custom</a>
             </div>
         </li>
 
