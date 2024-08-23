@@ -60,6 +60,18 @@ body {
     color: white;
 }
 
+.pd-btn {
+    background-color: #ffffff;
+    color: rgb(244, 5, 149);
+}
+
+.pd-btn:hover {
+    background-color: rgb(244, 5, 149);
+    color: #ffffff;
+}
+
+
+
 .text-pink {
     color: rgb(244, 5, 149) !important;
 }
