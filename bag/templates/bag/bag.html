@@ -10,32 +10,97 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container mb-3">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="text-pink mb-4">Shopping Bag</h2>
-                <hr>
-            </div>
-        </div>
+<div class="overlay"></div>
 
-        <div class="row">
-            <div class="col">
-                {% if bag_items %}
-                    <div class="table-responsive rounded text-pink">
-                        {{ bag_items }}
-                    </div>
-                {% else %}
-                    <p class="lead mb-5 text-pink">Your shopping bag is empty.</p>
-                    <a href="{% url 'products' %}" class="btn border-pink text-pink btn-pink rounded-1 btn-md">
-                        <span class="icon">
-                            <i class="text-white fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase text-white">Keep Shopping</span>
-                    </a>
-                {% endif %}
-            </div>
+<div class="overlay"></div>
+<div class="container mb-3">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="text-pink mb-4 text-center">Shopping Bag</h2>
+            <hr>
+            <a href="{% url 'products' %}" class="btn pd-btn border-pink rounded-1 btn-sm mb-3">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Keep Shopping</span>
+            </a>
         </div>
     </div>
+
+    <!-- Main Content Row -->
+    <div class="row">
+        <div class="col-12">
+            {% if bag_items %}
+                <!-- Responsive table for bag items -->
+                <div class="table-responsive rounded bg-light p-3">
+                    <table class="table table-sm">
+                        <thead class="text-secondary">
+                            <tr class="text-pink">
+                                <th scope="col"></th>
+                                <th scope="col">Product Info</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in bag_items %}
+                                <tr>
+                                    <td class="align-middle w-25">
+                                        <img class="img-fluid rounded w-50" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                    </td>
+                                    <td class="align-middle">
+                                        <p class="mb-1 font-weight-bold text-pink">{{ item.product.name }}</p>
+                                        <p class="mb-0 text-muted small">SKU: {{ item.product.sku|upper }}</p>
+                                    </td>
+                                    <td class="align-middle">£{{ item.product.price }}</td>
+                                    <td class="align-middle w-25">{{ item.quantity }}</td>
+                                    <td class="align-middle">£{{ item.product.price }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <!-- Totals and checkout actions -->
+                        <tfoot>
+                            <tr>
+                                <td colspan="3"></td>
+                                <td class="text-right font-weight-bold">Bag Total:</td>
+                                <td class="font-weight-bold">£{{ total|floatformat:2 }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"></td>
+                                <td class="text-right">Delivery:</td>
+                                <td>£{{ delivery|floatformat:2 }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"></td>
+                                <td class="text-right font-weight-bold">Grand Total:</td>
+                                <td class="font-weight-bold">£{{ grand_total|floatformat:2 }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-right pt-4">
+                                    <a href="{% url 'products' %}" class="btn btn-outline-pink pd-btn border-pink btn-lg mr-2">
+                                        <i class="fas fa-chevron-left"></i> Keep Shopping
+                                    </a>
+                                    <a href="" class="btn btn-pink btn-lg">
+                                        Secure Checkout <i class="fas fa-lock ml-2"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            {% else %}
+                <!-- Empty bag message -->
+                <div class="text-center py-5">
+                    <p class="lead text-pink">Your shopping bag is empty.</p>
+                    <a href="{% url 'products' %}" class="btn btn-pink btn-md">
+                        <i class="fas fa-chevron-left text-white mr-2"></i> Keep Shopping
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
 {% endblock %}
