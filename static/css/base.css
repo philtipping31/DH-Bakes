@@ -100,9 +100,13 @@ body {
     background-color: rgb(244, 5, 149);
 }
 
-.btt-link {
+.btt-link,
+.update-link,
+.remove-item {
     cursor: pointer;
 }
+
+
 /* Main Nav */
 
 .menu-hover:hover {

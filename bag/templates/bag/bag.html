@@ -10,7 +10,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
 
 <div class="overlay"></div>
 <div class="container mb-3">
@@ -41,6 +40,7 @@
                                 <th scope="col">Product Info</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Qty</th>
+                                <th></th>
                                 <th scope="col">Subtotal</th>
                             </tr>
                         </thead>
@@ -55,7 +55,40 @@
                                         <p class="mb-0 text-muted small">SKU: {{ item.product.sku|upper }}</p>
                                     </td>
                                     <td class="align-middle">£{{ item.product.price }}</td>
-                                    <td class="align-middle w-25">{{ item.quantity }}</td>
+                                    <!-- Adjust the width of the Quantity column -->
+                                    <td class="align-middle" style="width: 15%;">
+                                        <form action="">
+                                            {% csrf_token %}
+                                            <!-- Adjusting form-group to remove extra margin -->
+                                            <div class="form-group mb-0">
+                                                <div class="input-group input-group-sm">
+                                                    <div class="input-group-prepend">
+                                                        <button class="decrement-qty btn btn-sm btn-pink rounded-1 decrement-qty_{{item.item_id}}"
+                                                        data-item_id="{{ item.item_id }}" >
+                                                        <span>
+                                                            <i class="fas fa-minus fa-sm"></i>
+                                                        </span>
+                                                        </button>
+                                                    </div>
+                                                    <input class="form-control form-control-sm qty_input id_qty_{{ item.item_id }}" type="number" 
+                                                        name="quantity" value="{{ item.quantity }}" min="1" max="99" 
+                                                        data-item_id="{{ item.item_id }}">
+                                                    <div class="input-group-append">
+                                                        <button class="increment-qty btn btn-sm btn-pink rounded-1 increment-qty_{{item.item_id}}"
+                                                        data-item_id="{{ item.item_id }}">
+                                                        <span>
+                                                            <i class="fas fa-plus fa-sm"></i>
+                                                        </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <!-- Removed extra margin and floated items -->
+                                        <a class="update-link text-pink"><small>Update</small></a>
+                                        <a class="remove-item text-pink float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                    </td>
+                                    <td></td>
                                     <td class="align-middle">£{{ item.product.price }}</td>
                                 </tr>
                             {% endfor %}
@@ -63,22 +96,22 @@
                         <!-- Totals and checkout actions -->
                         <tfoot>
                             <tr>
-                                <td colspan="3"></td>
+                                <td colspan="4"></td>
                                 <td class="text-right font-weight-bold">Bag Total:</td>
                                 <td class="font-weight-bold">£{{ total|floatformat:2 }}</td>
                             </tr>
                             <tr>
-                                <td colspan="3"></td>
+                                <td colspan="4"></td>
                                 <td class="text-right">Delivery:</td>
                                 <td>£{{ delivery|floatformat:2 }}</td>
                             </tr>
                             <tr>
-                                <td colspan="3"></td>
+                                <td colspan="4"></td>
                                 <td class="text-right font-weight-bold">Grand Total:</td>
                                 <td class="font-weight-bold">£{{ grand_total|floatformat:2 }}</td>
                             </tr>
                             <tr>
-                                <td colspan="5" class="text-right pt-4">
+                                <td colspan="6" class="text-right pt-4">
                                     <a href="{% url 'products' %}" class="btn btn-outline-pink pd-btn border-pink btn-lg mr-2 mb-2">
                                         <i class="fas fa-chevron-left"></i> Keep Shopping
                                     </a>
@@ -102,5 +135,32 @@
         </div>
     </div>
 </div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 
 {% endblock %}
