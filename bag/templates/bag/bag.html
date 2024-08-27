@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -31,7 +32,6 @@
     <div class="row">
         <div class="col-12">
             {% if bag_items %}
-                <!-- Responsive table for bag items -->
                 <div class="table-responsive rounded bg-light p-3">
                     <table class="table table-sm">
                         <thead class="text-secondary">
@@ -57,9 +57,8 @@
                                     <td class="align-middle">£{{ item.product.price }}</td>
                                     <!-- Adjust the width of the Quantity column -->
                                     <td class="align-middle" style="width: 15%;">
-                                        <form action="">
+                                        <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id%}">
                                             {% csrf_token %}
-                                            <!-- Adjusting form-group to remove extra margin -->
                                             <div class="form-group mb-0">
                                                 <div class="input-group input-group-sm">
                                                     <div class="input-group-prepend">
@@ -84,12 +83,11 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <!-- Removed extra margin and floated items -->
                                         <a class="update-link text-pink"><small>Update</small></a>
                                         <a class="remove-item text-pink float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                     </td>
                                     <td></td>
-                                    <td class="align-middle">£{{ item.product.price }}</td>
+                                    <td class="align-middle">£{{ item.product.price | calc_subtotal:item.quantity }}</td>
                                 </tr>
                             {% endfor %}
                         </tbody>
@@ -153,8 +151,8 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove/${itemId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)
          .done(function() {
