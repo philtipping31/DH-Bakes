@@ -109,7 +109,7 @@ body {
 
 /* Main Nav */
 
-.menu-hover:hover {
+.nav-hover:hover {
     text-decoration: underline rgb(244, 5, 149);
 }
 
