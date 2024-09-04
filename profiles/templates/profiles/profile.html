@@ -19,12 +19,44 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font text-pink text-center mb3">My Profile</h2>
+                <h2 class="logo-font text-pink text-center mb-3">My Profile</h2>
                 <hr>
+                <a href="{% url 'products' %}" class="btn pd-btn border-pink rounded-1 btn-sm mb-3">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Keep Shopping</span>
+                </a>
             </div>
         </div>
-        <div class="text-pink">
-            {{ profile }}
+        <div class="row">
+            <!-- Delivery Info Section -->
+            <div class="col-12 col-lg-6 mb-5">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-pink text-white">
+                        <p class="mb-0 text-pink profile-title">Your Default Delivery Information</p>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{% url 'profile' %}" class="mt-3" id="profile-update-form">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <button type="submit" class="btn btn-pink btn-lg mb-2">Update Info</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Order History Section -->
+            <div class="col-12 col-lg-6 order-lg-last mb-5">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-pink text-white">
+                        <p class="mb-0 text-pink profile-title">Order History</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-pink">
+                            {{ orders }}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
 {% endblock %}

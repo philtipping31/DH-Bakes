@@ -1,0 +1,11 @@
+#profile-update-form .form-control {
+    color: rgb(244, 5, 149);
+}
+
+#profile-update-form input::placeholder {
+    color: rgb(244, 5, 149);
+}
+
+.profile-title {
+    font-size: large;
+}
