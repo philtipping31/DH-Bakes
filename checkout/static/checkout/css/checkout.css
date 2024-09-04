@@ -55,3 +55,11 @@ select option[value=""] {
   margin: 0;
   height: 100%;
 }
+
+#payment-form .form-control {
+  color: rgb(244, 5, 149);
+}
+
+#payment-form input::placeholder {
+  color: rgb(174, 173, 174);
+}

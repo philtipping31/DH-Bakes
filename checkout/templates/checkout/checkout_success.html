@@ -194,7 +194,16 @@
                         </div>
                         <hr>
                     </div>
-                    <h5 class="text-center text-pink mb-3">Thank you!</h5>
+                    {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn pd-btn border-pink rounded-1 btn-sm mb-3">
+                        <span class="icon">
+                            <i class="fas fa-angle-left"></i>
+                        </span>
+                        <span class="text-uppercase">Back to Profile</span>
+                    </a>
+                    {% else%}
+                        <h5 class="text-center text-pink mb-3">Thank you!</h5>
+                    {% endif %}
                 </div>
             </div>
         </div>

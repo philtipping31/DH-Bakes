@@ -3,9 +3,14 @@
 }
 
 #profile-update-form input::placeholder {
-    color: rgb(244, 5, 149);
+    color: rgb(174, 173, 174);
 }
 
 .profile-title {
     font-size: large;
+}
+
+.order-history {
+    max-height: 416px;
+    overflow-y: auto;
 }
