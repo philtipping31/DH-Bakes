@@ -142,8 +142,32 @@
     {% block page_header %}
     {% endblock %}
 
-    {% block content %}
-    {% endblock %}
+    <main class="flex-grow-1">
+        {% block content %}
+    
+        {% endblock %}
+    </main>
+
+     <!-- Footer Section -->
+     <footer class="footer-bg mt-3">
+        <ul id="social-media">
+        <li><a href="https://www.facebook.com/dhbakesx/" target="_blank" rel="noopener nofollow"
+            aria-label="Follow me on Facebook (opens in a new tab)">
+            <i class="fa-brands fa-facebook" title="Follow me on Facebook"></i></a>
+        </li>
+        <li><a href="https://www.instagram.com/dhbakes_/" target="_blank" rel="noopener no follow"
+            aria-label="Follow me on Instagram (opens in a new tab)">
+            <i class="fa-brands fa-instagram" title="Follow me on Instagram"></i></a>
+        </li>
+        <li><a href="https://github.com/philtipping31" target="_blank" rel="noopener"
+            aria-label="Follow me on GitHub (opens in a new tab)">
+            <i class="fa-brands fa-github" title="Follow me on Github"></i></a>
+        </li>
+        </ul>
+        <p class="text-center text-pink copyright">
+        Created by Phil Tipping for Code Institute project portfolio | 2024
+        </p>
+    </footer>
 
     {% block postloadjs %}
     <script type="text/javascript">

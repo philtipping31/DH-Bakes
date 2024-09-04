@@ -8,6 +8,9 @@ body {
     height: calc(100vh - 164px);
     color: #ffffff;
     font-family: "Roboto Condensed", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* from Bulma */
@@ -223,6 +226,41 @@ body {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+/* Footer */
+
+footer {
+    flex-shrink: 0;
+}
+
+.footer-bg {
+    background-color: rgb(241, 241, 241);
+    box-shadow: 1px -1px 5px 0 #000;
+}
+
+#social-media {
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 30px;
+}
+
+#social-media i {
+    font-size: 160%;
+    padding: 5%;
+    color: rgb(244, 5, 149);
+    transition-duration: 0.5s;
+}
+
+#social-media i:hover {
+    color: rgb(203, 4, 124);
+}
+
+.copyright {
+    font-size: 90%;
 }
 
 /* -------------------------------- Media Queries */
