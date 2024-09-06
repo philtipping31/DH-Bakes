@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col mt-3">
+                <hr class="mt-0">
+                <h2 class="text-pink mb-4 text-center">Product Management</h2>
+                <hr>
+                <h5 class="text-pink">Edit a Product</h5>
+            </div>
+        </div>
+
+        <div class="mt-2 row">
+            <div class="col-12 col-lg-6 card shadow-sm">
+                <form action="{% url 'edit_product' product.id %}" method="POST" class="form mb-2 mt-4 text-pink" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-right mt-2">
+                        <a href="{% url 'products' %}" class="btn btn-outline-pink pd-btn border-pink rounded-1">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="font-weight-bold">Cancel</span>
+                        </a>
+                        <!-- Submit Button -->
+                        <button id="submit-button" class="btn btn-pink rounded-1">
+                            <span class="icon">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                            <span class="font-weight-bold">Update Product</span>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+
