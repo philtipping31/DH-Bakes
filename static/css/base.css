@@ -242,8 +242,8 @@ footer {
 }
 
 .footer-bg {
-    background-color: rgb(241, 241, 241);
-    box-shadow: 1px -1px 5px 0 #000;
+    background-color: rgb(255, 253, 253);
+    box-shadow: 1px -1px 5px 0 rgb(244, 5, 149);
 }
 
 #social-media {
