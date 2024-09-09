@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'faq/css/faq.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -20,28 +24,49 @@
             </div>
         </div>
 
-        <div class="mt-1 row">        
-            <!-- FAQ Section-->
-            <div class="col-12 col-lg-6 text-pink">
-                {% for category in categories %}
-                <div class="faq-category">
-                    <h2>{{ category.name }}</h2>
-                    {% if category.description %}
-                        <p>{{ category.description }}</p>
-                    {% endif %}
-                    <ul>
-                        {% for faq in category.faq_set.all %}
-                            {% if faq.is_active %}
-                                <li>
-                                    <h3>{{ faq.question }}</h3>
-                                    <p>{{ faq.answer }}</p>
-                                </li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="mt-1 row justify-content-center w-100">
+                <!-- FAQ List -->
+                <div class="col-12">
+                    {% for category in categories %}
+                    <div class="faq-category text-pink card shadow-sm border-1">
+                        <div class="card-body">
+                            <h2>{{ category.name }}</h2>
+                            <ul class="list-unstyled">
+                                {% for faq in category.faq_set.all %}
+                                    {% if faq.is_active %}
+                                        <li>
+                                            <button class="faq-question btn-pink w-100 text-left mb-2">{{ faq.question }} <i class="fa-solid fa-chevron-down"></i></button>
+                                            <div class="faq-answer mb-1">{{ faq.answer|linebreaks }}</div>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="contact-us text-pink text-center">
+                        <p>Can't find the answer to your question here? Not a problem, feel free to get in touch <strong><a href="{% url 'contact' %}">here</a></strong> and send us a message directly</p>
+                    </div>
                 </div>
-                {% endfor %}    
             </div>
         </div>
     </div>
 {% endblock %}
+
+{% block postloadjs %}
+<script>
+    // Toggle the answer visibility when the question is clicked
+    $(document).ready(function(){
+        // Initially hide all the answers (this is just a safety check)
+        $('.faq-answer').hide();
+
+        // Toggle answer visibility on question click
+        $('.faq-question').on('click', function(){
+            // Toggle the answer for the clicked question
+            $(this).next('.faq-answer').slideToggle();
+        });
+    });
+</script>
+{% endblock %}
+

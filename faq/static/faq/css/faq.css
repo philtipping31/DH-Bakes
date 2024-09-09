@@ -1,0 +1,32 @@
+.faq-question {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgb(244, 5, 149);
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px;
+    margin: 0;
+    border-left: 2px solid #ccc;
+    background-color: #fff;
+}
+
+.faq-category {
+    margin-bottom: 25px;
+}
+
+.contact-us a {
+    text-decoration: underline;
+    color: rgb(244, 5, 149);
+}
+
