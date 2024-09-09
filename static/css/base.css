@@ -91,6 +91,10 @@ body {
     font-size: 180%;
 }
 
+.main-div {
+    max-width: 80%;
+}
+
 .btt-button {
     color: rgb(244, 5, 149);
     height: 42px;
