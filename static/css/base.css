@@ -6,7 +6,7 @@ body {
     background: url('/media/bg-image.jpeg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #ffffff;
+    color: #000000;
     font-family: "Roboto Condensed", sans-serif;
     min-height: 100vh;
     display: flex;
