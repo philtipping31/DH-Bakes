@@ -1,0 +1,22 @@
+.recipe {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.pagination {
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.page-link {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.recipe-img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: auto;
+}

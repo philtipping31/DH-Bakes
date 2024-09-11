@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'recipes/css/recipes.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div> 
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col mt-3">
+                <hr class="mt-0">
+                <h2 class="text-pink mb-4 text-center">Recipes</h2>
+                <hr>
+            </div>
+        </div>
+
+        <!-- Container for the search bar and recipes -->
+        <div class="container">
+            <div class="row">
+                <!-- Search Form -->
+                <div class="col-12 col-lg-4 ml-lg-auto my-auto py-1 py-lg-0">
+                    <form method="GET" action="{% url 'recipe_list' %}" class="w-100">
+                        <div class="input-group">
+                            <input class="form-control border border-pink rounded-1" type="text" name="q" placeholder="Search for recipes" value="{{ request.GET.q }}">
+                            <div class="input-group-append">
+                                <button class="btn btn-pink border border-pink rounded-1" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <!-- Display Recipes -->
+                <div class="col-12">
+                    {% if page_obj %}
+                        {% for recipe in page_obj %}
+                        <div class="card shadow-sm border-0">
+                            <div class="card-header bg-pink text-white">
+                                <h2 class="text-pink">{{ recipe.title }}</h2>
+                            </div>
+                        </div>
+                        <div class="recipe">
+                            <p class="text-black"><strong class="text-pink">Prep Time:</strong> {{ recipe.prep_time }} mins</p>
+                            <p class="text-black"><strong class="text-pink">Cook Time:</strong> {{ recipe.cook_time }} mins</p>
+                            <p class="text-pink">Description:</p>
+                            <p class="text-black">{{ recipe.description|truncatewords:30 }}</p>
+                            <p class="text-pink">Ingredients:</p>
+                            <p class="text-black">{{ recipe.ingredients }}</p>
+                            <p class="text-pink">Instructions:</p>
+                            <p class="text-black">{{ recipe.instructions }}</p>
+                            <p class="text-pink">Serves:</p>
+                            <p class="text-black">{{ recipe.servings }} People</p>
+                            {% if recipe.image %}
+                                <img class="card-img-top img-fluid fixed-img-size recipe-img" src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+                            {% else %}
+                                <img class="card-img-top img-fluid fixed-img-size recipe-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ recipe.title }}">
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-pink">No recipes found matching your criteria.</p>
+                    {% endif %}
+                </div>
+
+                <!--Pagination-->
+                <div class="col">
+                    {% if is_paginated %}
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a href="?q={{ request.GET.q }}&page={{ page_obj.previous_page_number }}" class="page-link btn border-pink rounded-1 pd-btn">&laquo; PREV</a>
+                            </li>
+                            {% endif %}
+
+                            <li class="page-item disabled">
+                                <span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+                            </li>
+
+                            {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a href="?q={{ request.GET.q }}&page={{ page_obj.next_page_number }}" class="page-link btn border-pink rounded-1 pd-btn">NEXT &raquo;</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
