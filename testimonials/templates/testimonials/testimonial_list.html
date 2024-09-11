@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'testimonials/css/testimonials.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div> 
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col mt-3">
+                <hr class="mt-0">
+                <h2 class="text-pink mb-4 text-center">Testimonials</h2>
+                <hr>
+            </div>
+        </div>
+
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="mt-1 row justify-content-center w-100">
+                <!-- Testimonials List -->
+                <div class="col-12">
+                    <p class="text-center text-pink testimonial-para">Here are some of our testimonials submitted by our customers!</p>
+                    {% if testimonials %}
+                        {% for testimonial in testimonials %}
+                            <div class="testimonial card p-2 my-4">
+                                <div class="testimonial-title text-pink"><h2>{{ testimonial.title }}</h2></div>
+                                <div class="testimonial-text text-muted">{{ testimonial.testimonial_text }}</div>
+                                <div class="testimonial-rating text-muted">Rating: {{ testimonial.rating }} / 5 <i class="text-warning mr-2 fas fa-star"></i></div>
+                                <div class="text-pink mt-2">Posted by {{ testimonial.name }}</div>
+                                <div class="text-muted"> on {{testimonial.date_submitted}}</div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-pink text-center">No testimonials available at the moment.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+

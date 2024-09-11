@@ -1,0 +1,19 @@
+.testimonial {
+    box-shadow: 1px -1px 2px 2px rgb(199, 199, 199);
+}
+ 
+.testimonial-text {
+    font-size: 120%;
+}
+
+.testimonial-para {
+    font-size: large;
+}
+
+.testimonial-title {
+    text-decoration: underline;
+}
+
+.testimonial-rating {
+    padding: 1px;
+}
