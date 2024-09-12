@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'testimonials/css/testimonials.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div> 
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col mt-3">
+                <hr class="mt-0">
+                <h2 class="text-pink mb-4 text-center">Add a Testimonial</h2>
+                <hr>
+                <a href="{% url 'testimonial_list' %}" class="btn pd-btn border-pink rounded-1 btn-sm mb-3">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">All Testimonials</span>
+                </a>
+            </div>
+        </div>
+        <div class="mt-1 row">        
+            <!-- Contact Us Form Section -->
+            <div class="col-12 col-lg-6">
+                <p class="text-pink">Please fill out the testimonial form below</p>
+                <p class="text-pink">Testimonials will be submitted on site once approved</p>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="card shadow-sm border-1 mb-4">
+                        <div class="card-body">
+                            <fieldset class="rounded px-3 mb-4 text-pink">
+                                {{ form|crispy }}
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="submit-button text-right mt-4 mb-2">
+                        <button id="submit-button" class="btn btn-pink rounded-1">
+                            <span class="font-weight-bold">Add Testimonial</span>
+                            <span class="icon">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

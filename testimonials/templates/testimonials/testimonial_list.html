@@ -29,6 +29,7 @@
                 <!-- Testimonials List -->
                 <div class="col-12">
                     <p class="text-center text-pink testimonial-para">Here are some of our testimonials submitted by our customers!</p>
+                    <p class="text-center text-pink testimonial-para">Click <a href="{% url 'add_testimonial' %}" class="text-pink underline">HERE</a> to add yours!</p>
                     {% if testimonials %}
                         {% for testimonial in testimonials %}
                             <div class="testimonial card p-2 my-4">
@@ -37,6 +38,12 @@
                                 <div class="testimonial-rating text-muted">Rating: {{ testimonial.rating }} / 5 <i class="text-warning mr-2 fas fa-star"></i></div>
                                 <div class="text-pink mt-2">Posted by {{ testimonial.name }}</div>
                                 <div class="text-muted"> on {{testimonial.date_submitted}}</div>
+                                <div class="mt-1">
+                                    {% if testimonial.user == request.user %}
+                                        <a href="{% url 'edit_testimonial' testimonial.id %}" class="text-info">Edit | </a>
+                                        <a href="{% url 'delete_testimonial' testimonial.id %}" class="text-danger">Delete</a>
+                                    {% endif %}
+                                </div>
                             </div>
                         {% endfor %}
                     {% else %}
