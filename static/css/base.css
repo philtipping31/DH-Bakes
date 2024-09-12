@@ -43,13 +43,13 @@ body {
 }
 
 .shop-now-button {
-    background: rgb(244, 5, 149);
+    background: #AB0368;
     color: rgb(255, 255, 255);
     min-width: 260px;
 }
 
 .btn-pink {
-    background: rgb(244, 5, 149);
+    background: #AB0368;
     color: white;
 }
 
@@ -65,18 +65,18 @@ body {
 
 .pd-btn {
     background-color: #ffffff;
-    color: rgb(244, 5, 149);
+    color: #AB0368;
 }
 
 .pd-btn:hover {
-    background-color: rgb(244, 5, 149);
+    background-color: #AB0368;
     color: #ffffff;
 }
 
 
 
 .text-pink {
-    color: rgb(244, 5, 149) !important;
+    color: #AB0368 !important;
 }
 
 .text-black {
@@ -84,7 +84,7 @@ body {
 }
 
 .border-pink {
-    border: 1px solid rgb(244, 5, 149) !important;
+    border: 1px solid #AB0368 !important;
 }
 
 .about {
@@ -96,7 +96,7 @@ body {
 }
 
 .btt-button {
-    color: rgb(244, 5, 149);
+    color: #AB0368;
     height: 42px;
     width: 42px;
     
@@ -104,7 +104,7 @@ body {
 
 .btt-button:hover {
     color: #ffffff;
-    background-color: rgb(244, 5, 149);
+    background-color: #AB0368;
 }
 
 .btt-link,
@@ -117,15 +117,15 @@ body {
 /* Main Nav */
 
 .nav-hover:hover {
-    text-decoration: underline rgb(244, 5, 149);
+    text-decoration: underline #AB0368;
 }
 
 #account a {
-    color: rgb(244, 5, 149);
+    color: #AB0368;
 }
 
 #main-nav a {
-    color: rgb(244, 5, 149);
+    color: #AB0368;
 }
 
 .overlay {
@@ -247,7 +247,7 @@ footer {
 
 .footer-bg {
     background-color: rgb(255, 253, 253);
-    box-shadow: 1px -1px 5px 0 rgb(244, 5, 149);
+    box-shadow: 1px -1px 5px 0 #AB0368;
 }
 
 #social-media {
@@ -262,7 +262,7 @@ footer {
 #social-media i {
     font-size: 160%;
     padding: 5%;
-    color: rgb(244, 5, 149);
+    color: #AB0368;
     transition-duration: 0.5s;
 }
 
