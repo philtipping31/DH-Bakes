@@ -57,7 +57,7 @@ select option[value=""] {
 }
 
 #payment-form .form-control {
-  color: rgb(244, 5, 149);
+  color: #AB0368;
 }
 
 #payment-form input::placeholder {

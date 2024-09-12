@@ -346,13 +346,13 @@ footer {
 
 @media (min-width: 700px){
     .btt-button {
-        color: rgb(244, 5, 149);
+        color: #c90179;
         height: 42px;
         width: 42px;
     }
 
     .btt-button:hover {
         color: #ffffff;
-        background-color: rgb(244, 5, 149);
+        background-color: rgb(203, 4, 124);
     }
 }

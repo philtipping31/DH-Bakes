@@ -2,7 +2,7 @@
     display: block;
     padding: 10px;
     margin: 5px 0;
-    background-color: rgb(244, 5, 149);
+    background-color: #AB0368;
     border: none;
     border-radius: 5px;
     width: 100%;
@@ -27,6 +27,6 @@
 
 .contact-us a {
     text-decoration: underline;
-    color: rgb(244, 5, 149);
+    color: #AB0368;
 }
 
