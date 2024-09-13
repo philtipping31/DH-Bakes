@@ -27,6 +27,9 @@ SELECT_ENQUIRY_STATUS = (
 )
 
 class Contact(models.Model):
+    """
+    A model representing a contact enquiry form submission.
+    """
     name = models.CharField(max_length=100, verbose_name="Your Name")
     email = models.EmailField(verbose_name="Email Address")
     phone = models.CharField( max_length=11, blank=True, verbose_name="Phone Number")

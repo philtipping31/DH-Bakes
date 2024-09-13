@@ -13,6 +13,12 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
+    """
+    A model representing a customer's order, which includes details like the customer's 
+    personal information, order total, delivery costs, and order-specific details like 
+    the unique order number, payment ID, and more."""
+
+
     order_number = models.CharField(max_length=32, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True, related_name='orders')
@@ -33,7 +39,10 @@ class Order(models.Model):
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
     def _generate_order_number(self):
-        """Generate a random, unique order number using UUID."""
+        """
+        Generate a random, unique order number using UUID.
+        """
+
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
@@ -48,7 +57,10 @@ class Order(models.Model):
 
 
     def save(self, *args, **kwargs):
-        """Override the save method to set the order number if not set."""
+        """
+        Override the save method to set the order number if not set.
+        """
+
         if not self.order_number:
             self.order_number = self._generate_order_number()
         super(Order, self).save(*args, **kwargs)
@@ -58,6 +70,12 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    A model representing a single line item within an order. Each line item is associated 
+    with a specific product and includes information about the quantity ordered and 
+    the total price for that line item.
+    """
+    
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=0)

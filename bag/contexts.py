@@ -5,6 +5,11 @@ from products.models import Product
 
 
 def bag_contents(request):
+    """
+    Retrieves the contents of the shopping bag from the session, calculates
+    the total price, delivery costs, and product count, and returns these 
+    values in the context."""
+
     bag_items = []
     total = Decimal('0.00')
     product_count = 0

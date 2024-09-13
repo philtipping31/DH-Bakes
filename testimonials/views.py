@@ -20,6 +20,7 @@ def testimonial_list(request):
 @login_required
 def add_testimonial(request):
     """A view to handle adding a new testimonial"""
+    
     if request.method == 'POST':
         form = TestimonialForm(request.POST)
         if form.is_valid():
@@ -39,6 +40,7 @@ def add_testimonial(request):
 @login_required
 def edit_testimonial(request, testimonial_id):
     """A view to handle editing an existing testimonial"""
+
     testimonial = get_object_or_404(Testimonial, id=testimonial_id)
 
     if testimonial.user != request.user:
@@ -60,6 +62,7 @@ def edit_testimonial(request, testimonial_id):
 @login_required
 def delete_testimonial(request, testimonial_id):
     """A view to handle deleting an existing testimonial"""
+
     testimonial = get_object_or_404(Testimonial, id=testimonial_id)
 
     if testimonial.user != request.user:

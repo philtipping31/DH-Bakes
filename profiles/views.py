@@ -36,6 +36,8 @@ def profile(request):
     return render(request, template, context)
 
 def order_history(request, order_number):
+    """ Show a users previous orders on their profile"""
+    
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (

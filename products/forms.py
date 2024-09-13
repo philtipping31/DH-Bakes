@@ -4,7 +4,12 @@ from .models import Product, Category
 
 
 class ProductForm(forms.ModelForm):
-
+    """
+    A form for creating and updating `Product` instances.
+    
+    This form allows users to input all fields related to a product, 
+    including an optional image, using the custom widget `CustomClearableFileInput`.
+    """
     class Meta:
         model = Product
         fields = '__all__'

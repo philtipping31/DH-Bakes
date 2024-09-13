@@ -10,7 +10,9 @@ from .forms import ProductForm
 # Create your views here.
 
 def all_products(request):
-    """ A view to show all products, including sorting and search queries """
+    """ 
+    A view to show all products, including sorting products and performing search queries 
+    """
 
     query = request.GET.get('q', None)  # Get the query parameter 'q', or None if it doesn't exist
     products = Product.objects.all()

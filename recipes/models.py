@@ -1,6 +1,10 @@
 from django.db import models
 
 class Recipe(models.Model):
+    """ 
+    A model representing an individual recipe in the database.
+    """
+    
     title = models.CharField(max_length=250, blank=True, null=True)
     description = models.TextField(max_length=1000, blank=True, null=True)
     ingredients = models.TextField(blank=True, null=True)

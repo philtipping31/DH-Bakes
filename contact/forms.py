@@ -2,6 +2,12 @@ from django import forms
 from .models import Contact
 
 class ContactForm(forms.ModelForm):
+    """
+    A form for submitting contact enquiries. This form is based on the Contact model
+    and includes fields for the user's name, email, phone, subject, form of contact, 
+    question category, and message.
+    """
+
     class Meta:
         model = Contact
         fields = ['name', 'email', 'phone', 

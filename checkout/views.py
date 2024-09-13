@@ -15,6 +15,9 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    Store checkout data temporarily in the Stripe PaymentIntent's metadata.
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -31,6 +34,10 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """ 
+    Handle checkout form submission and create a Stripe PaymentIntent 
+    """
+
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -129,7 +136,7 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    Handle the successful completion of a checkout process.
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
