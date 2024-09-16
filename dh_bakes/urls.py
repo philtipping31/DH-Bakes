@@ -33,6 +33,6 @@ urlpatterns = [
     path('recipes/', include('recipes.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler403 = 'boutique_ado.views.handler403'
-handler404 = 'boutique_ado.views.handler404'
-handler500 = 'boutique_ado.views.handler500'
+handler403 = 'dh_bakes.views.handler403'
+handler404 = 'dh_bakes.views.handler404'
+handler500 = 'dh_bakes.views.handler500'
