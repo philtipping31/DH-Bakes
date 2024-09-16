@@ -68,7 +68,7 @@ body {
 }
 
 .pd-btn:hover {
-    background-color: #AB0368;
+    background-color: rgb(203, 4, 124);
     color: #ffffff;
 }
 
@@ -299,6 +299,16 @@ footer {
     background-color: #dc3545;
     border-color: #dc3545;
     border-radius: 0;
+}
+
+/* MailChimp */
+
+#mc_embed_signup form {
+    padding: 0;
+}
+
+#mc_embed_signup .button {
+     background-color: #AB0368;
 }
 
 
