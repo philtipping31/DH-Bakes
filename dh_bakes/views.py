@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-def handler404(request, exception):
+def handler403(request, exception):
     """ Error Handler 403 - Page Not Found """
     return render(request, "errors/403.html", status=403)
 
