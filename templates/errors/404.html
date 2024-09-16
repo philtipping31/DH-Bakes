@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="text-center col-12 my-auto text-bg">
+                <h1 class="display-4 text-pink logo-font">
+                    Error 404 - Page Not Found!
+                    
+                </h1>
+                <p class="about text-pink" width="90">
+                    The page you are looking for can't be found, sorry!
+                </p>
+                <p>
+                    Click below to go back to the home page!
+                </p>
+
+                <div class="my-6">
+                    <h4>
+                        <a href="{% url 'home' %}" class="shop-now-button btn btn-lg py-3">Back to home page</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
