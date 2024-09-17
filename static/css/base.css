@@ -428,12 +428,12 @@ footer {
         font-size: large;
     }
 
-    .container {
-        max-width: 80%;
-      }
-
     .qty_input {
         padding: .5rem;
+    }
+
+    main {
+        margin-top: 50px;
     }
 
 }
@@ -457,13 +457,6 @@ footer {
 
 @media (max-width: 767px) {
     .hide-on-small {
-        display: none;
-    }
-}
-
-
-@media (min-width: 767px) {
-    .hide-on-large {
         display: none;
     }
 }

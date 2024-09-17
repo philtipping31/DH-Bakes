@@ -8,9 +8,12 @@ The project was also tested frequently via Google Chrome Dev Tools for display i
 
 ### HTML Files
 
-All Html files were tested using [W3C Schools validator](https://validator.w3.org/) in logged in and logged out state.
+All Html pages were tested using [W3C Schools validator](https://validator.w3.org/) in logged in and logged out state.
+
+All pages were viewed via the deployed site, navigating from the home page through to all other pages, right clicking and 'View Page Source' copying this code directly into the HTML Checker.
 
 All issues were resolved and files now pass checks.
+
 
 
 ### CSS Files
