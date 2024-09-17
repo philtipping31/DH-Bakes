@@ -13,9 +13,9 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST, request.FILES)
         if form.is_valid():
-            contact = form.save(commit=False)  # Don't save to DB yet
-            contact.created_at = timezone.now()  # Set the creation time
-            contact.save()  # Now save to DB
+            contact = form.save(commit=False)
+            contact.created_at = timezone.now()
+            contact.save()
             messages.success(request, "Thank you! Your enquiry has been submitted successfully.")
             return redirect('home')
         else:

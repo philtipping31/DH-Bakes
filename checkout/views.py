@@ -105,8 +105,8 @@ def checkout(request):
             try:
                 profile = UserProfile.objects.get(user=request.user)
                 order_form = OrderForm(initial={
-                    'full_name': profile.default_full_name or profile.user.get_full_name(),
-                    'email': profile.default_email or profile.user.email,
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
                     'country': profile.default_country,
                     'postcode': profile.default_postcode,
@@ -123,6 +123,8 @@ def checkout(request):
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
+
+    print("Intent client secret: ", intent.client_secret)
 
     template = 'checkout/checkout.html'
     context = {
