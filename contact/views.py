@@ -17,7 +17,7 @@ def contact(request):
             contact.created_at = timezone.now()
             contact.save()
             messages.success(request, "Thank you! Your enquiry has been submitted successfully.")
-            return redirect('home')
+            form = ContactForm()
         else:
             messages.error(request, "There was an error with your submission. Please check your details.")
     else:
