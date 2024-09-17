@@ -57,13 +57,14 @@
                             <p><strong class="text-pink">Prep Time:</strong> {{ recipe.prep_time }} mins</p>
                             <p><strong class="text-pink">Cook Time:</strong> {{ recipe.cook_time }} mins</p>
                             <p class="text-pink">Description:</p>
-                            <p>{{ recipe.description|truncatewords:30 }}</p>
+                            {{ recipe.description|truncatewords:30 }}
+                            <p></p>
                             <p class="text-pink">Ingredients:</p>
-                            <p>{{ recipe.ingredients|linebreaks}}</p>
+                            {{ recipe.ingredients|linebreaks}}
                             <p class="text-pink">Instructions:</p>
-                            <p>{{ recipe.instructions|linebreaks }}</p>
+                            {{ recipe.instructions|linebreaks }}
                             <p class="text-pink">Serves:</p>
-                            <p>{{ recipe.servings }} People</p>
+                            {{ recipe.servings }} People
                             {% if recipe.image %}
                                 <img class="card-img-top img-fluid fixed-img-size recipe-img" src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
                             {% else %}
