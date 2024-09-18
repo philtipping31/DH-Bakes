@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="text-pink mb-5 text-center mt-5">Shopping Bag</h2>
+            <h2 class="text-pink text-center mb-4 mt-4">Shopping Bag</h2>
             <hr>
             <a href="{% url 'products' %}" class="btn pd-btn border-pink rounded-1 btn-sm mb-3">
                 <span class="icon">
@@ -209,6 +209,21 @@
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+
+    //ID change for mobile bag view
+    $('.remove-item-mob').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('mob-remove_')[1];
         var url = `/bag/remove/${itemId}/`;
         var data = {
             'csrfmiddlewaretoken': csrfToken
