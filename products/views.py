@@ -7,14 +7,14 @@ from django.db.models.functions import Lower
 from .models import Product, Category
 from .forms import ProductForm
 
-# Create your views here.
 
 def all_products(request):
-    """ 
-    A view to show all products, including sorting products and performing search queries 
+    """
+    A view to show all products,
+    including sorting products and performing search queries
     """
 
-    query = request.GET.get('q', None)  # Get the query parameter 'q', or None if it doesn't exist
+    query = request.GET.get('q', None)
     products = Product.objects.all()
     categories = None
     sort = None
@@ -43,9 +43,11 @@ def all_products(request):
 
     if query:
         queries = Q(name__icontains=query) | Q(description__icontains=query)
-        products = products.filter(queries)  # Filter products based on the query
+        # Filter products based on the query
+        products = products.filter(queries)
     elif query == '':
-        messages.error(request, "You did not submit any recognised search criteria")
+        messages.error(request,
+                       "You did not submit any recognised search criteria")
         return redirect(reverse('products'))  # Redirect if the query is empty
 
     current_sorting = f'{sort}_{direction}'
@@ -80,18 +82,21 @@ def add_product(request):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do this')
         return redirect(reverse('home'))
-    
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
-            messages.success(request, 'Successfully added product to the store')
+            messages.success(request,
+                             'Successfully added product to the store')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please check the from before submitting again')
+            messages.error(request,
+                           'Failed to add product.'
+                           'Please check the from before submitting again')
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -116,7 +121,9 @@ def edit_product(request, product_id):
             messages.success(request, f'Successfully updated {product.name}')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product successfully. Please check the from before resubmitting.')
+            messages.error(request,
+                           'Failed to update product successfully.'
+                           'Please check the from before resubmitting.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are now editing {product.name}')
@@ -139,12 +146,12 @@ def delete_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do this')
         return redirect(reverse('home'))
-    
+
     if request.method == 'POST':
         product.delete()
         messages.success(request, "Successfully deleted product")
         return redirect('add_product')
-    
+
     template = 'products/delete_product.html'
     context = {'product': product}
     return render(request, template, context)

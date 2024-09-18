@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Category(models.Model):
     """
     A model representing product categories in the system.
@@ -19,7 +20,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    """ 
+    """
     A model representing a product in the store.
     """
 

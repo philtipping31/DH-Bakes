@@ -6,15 +6,17 @@ from .models import Product, Category
 class ProductForm(forms.ModelForm):
     """
     A form for creating and updating `Product` instances.
-    
-    This form allows users to input all fields related to a product, 
-    including an optional image, using the custom widget `CustomClearableFileInput`.
+
+    This form allows users to input all fields related to a product,
+    including an optional image, using the custom widget
+    `CustomClearableFileInput`.
     """
     class Meta:
         model = Product
         fields = '__all__'
 
-    image = forms.ImageField(label="Image", required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(label="Image", required=False,
+                             widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

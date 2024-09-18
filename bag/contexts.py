@@ -7,14 +7,14 @@ from products.models import Product
 def bag_contents(request):
     """
     Retrieves the contents of the shopping bag from the session, calculates
-    the total price, delivery costs, and product count, and returns these 
+    the total price, delivery costs, and product count, and returns these
     values in the context."""
 
     bag_items = []
     total = Decimal('0.00')
     product_count = 0
     delivery = Decimal('0.00')
-    
+
     bag = request.session.get('bag', {})
 
     for item_id, quantity in bag.items():
@@ -28,7 +28,7 @@ def bag_contents(request):
         })
 
     if product_count > 0:
-        delivery = Decimal(settings.STANDARD_DELIVERY)  # Convert STANDARD_DELIVERY to Decimal
+        delivery = Decimal(settings.STANDARD_DELIVERY)
 
     grand_total = delivery + total
 

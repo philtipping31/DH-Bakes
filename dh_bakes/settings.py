@@ -30,9 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['8000-philtipping31-dhbakes-c9k4ojdqbuh.ws.codeinstitute-ide.net',
-                '.herokuapp.com',
+                 '.herokuapp.com',
                  'localhost'
-                ]
+                 ]
 
 
 # Application definition
@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'testimonials',
     'recipes',
 
-    #Other
+    # Other
     'crispy_forms',
     'storages',
 ]
@@ -88,7 +88,8 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', #required for allauth
+                # required for allauth
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
@@ -97,7 +98,7 @@ TEMPLATES = [
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
-                
+
             ]
         },
     },
@@ -214,10 +215,10 @@ if 'USE_AWS' in os.environ:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}'
 
 
-#Delivery Amount
+# Delivery Amount
 STANDARD_DELIVERY = 5.0
 
-#Stripe
+# Stripe
 
 STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')

@@ -1,9 +1,10 @@
 from django import forms
 from .models import Testimonial
 
+
 class TestimonialForm(forms.ModelForm):
-    """ 
-    A form to add a testimonial to the site. 
+    """
+    A form to add a testimonial to the site.
     Rating choices are set 1-5
     """
     class Meta:

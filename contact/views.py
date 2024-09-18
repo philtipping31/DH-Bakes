@@ -4,7 +4,6 @@ from django.utils import timezone
 
 from .forms import ContactForm
 
-# Create your views here.
 
 def contact(request):
     """
@@ -16,10 +15,12 @@ def contact(request):
             contact = form.save(commit=False)
             contact.created_at = timezone.now()
             contact.save()
-            messages.success(request, "Thank you! Your enquiry has been submitted successfully.")
+            messages.success(request, "Thank you!"
+                             "Your enquiry has been submitted successfully.")
             form = ContactForm()
         else:
-            messages.error(request, "There was an error with your submission. Please check your details.")
+            messages.error(request, "There was an error with your submission."
+                           "Please check your details.")
     else:
         form = ContactForm()
 

@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -12,6 +13,7 @@ from bag.contexts import bag_contents
 
 import stripe
 import json
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -34,8 +36,8 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-    """ 
-    Handle checkout form submission and create a Stripe PaymentIntent 
+    """
+    Handle checkout form submission and create a Stripe PaymentIntent
     """
 
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -75,21 +77,24 @@ def checkout(request):
 
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
+                        "One of the products in your bag wasn't found"
+                        "in our database"
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                                    args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request,
+                           "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -105,7 +110,8 @@ def checkout(request):
             try:
                 profile = UserProfile.objects.get(user=request.user)
                 order_form = OrderForm(initial={
-                    'full_name': profile.default_full_name or profile.user.get_full_name(),
+                    'full_name': profile.default_full_name or
+                    profile.user.get_full_name(),
                     'email': profile.default_email or profile.user.email,
                     'phone_number': profile.default_phone_number,
                     'country': profile.default_country,

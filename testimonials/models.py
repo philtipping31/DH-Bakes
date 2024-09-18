@@ -6,12 +6,13 @@ from django.contrib.auth.models import User
 
 class Testimonial(models.Model):
     """ A model representing a single testimonial in the database """
-    
-    user = models.ForeignKey(User, on_delete=models.CASCADE) 
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=200, blank=True, null=True)
     testimonial_text = models.TextField(max_length=1000, blank=True)
-    rating = models.PositiveIntegerField(default=5, help_text="Rating between 1 and 5")
+    rating = models.PositiveIntegerField(default=5,
+                                         help_text="Rating between 1 and 5")
     date_submitted = models.DateTimeField(auto_now_add=True)
     is_approved = models.BooleanField(default=False)
 

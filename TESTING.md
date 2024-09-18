@@ -56,3 +56,4 @@ Any errors were fixed so all pass checks.
 
 Python files were checked using the [CI PEP8 Linter](https://pep8ci.herokuapp.com/)
 
+Most errors were due to spacing and lines to long, all of these were resolved. Below shows each app and the file tested.

@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 from .models import Recipe
 
+
 def recipe_list(request):
     """View to display a list of approved recipes"""
 
@@ -12,7 +13,7 @@ def recipe_list(request):
     # Apply search filtering
     if query:
         recipes = recipes.filter(
-            Q(title__icontains=query) | 
+            Q(title__icontains=query) |
             Q(description__icontains=query) |
             Q(ingredients__icontains=query)
         )
@@ -24,8 +25,8 @@ def recipe_list(request):
 
     template = 'recipes/recipe_list.html'
     context = {
-        'page_obj': page_obj,  # Passing page_obj to the template
-        'is_paginated': page_obj.has_other_pages(),  # Helps determine if pagination controls should be shown
+        'page_obj': page_obj,
+        'is_paginated': page_obj.has_other_pages(),
     }
 
     return render(request, template, context)

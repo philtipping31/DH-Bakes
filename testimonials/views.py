@@ -8,7 +8,9 @@ from .forms import TestimonialForm
 
 def testimonial_list(request):
     """ A View to display all approved testimonials"""
-    testimonials = Testimonial.objects.filter(is_approved=True).order_by('-date_submitted')
+    testimonials = Testimonial.objects.filter(
+        is_approved=True
+    ).order_by('-date_submitted')
 
     template = 'testimonials/testimonial_list.html'
     context = {
@@ -21,22 +23,25 @@ def testimonial_list(request):
 def add_testimonial(request):
     """A view to handle adding a new testimonial - new testimonials
     will be shown in admin only until approved."""
-    
+
     if request.method == 'POST':
         form = TestimonialForm(request.POST)
         if form.is_valid():
             testimonial = form.save(commit=False)
-            testimonial.user = request.user 
+            testimonial.user = request.user
             testimonial.is_approved = False
             testimonial.save()
-            messages.success(request, 'Testimonial submitted and awaiting approval! Thank you.')
+            messages.success(request,
+                             'Testimonial submitted and awaiting approval!'
+                             'Thank you.')
             return redirect('testimonial_list')
     else:
         form = TestimonialForm()
-    
+
     template = 'testimonials/add_testimonial.html'
     context = {'form': form}
     return render(request, template, context)
+
 
 @login_required
 def edit_testimonial(request, testimonial_id):
@@ -46,7 +51,8 @@ def edit_testimonial(request, testimonial_id):
     testimonial = get_object_or_404(Testimonial, id=testimonial_id)
 
     if testimonial.user != request.user:
-        messages.error(request, "You are not allowed to edit this testimonial.")
+        messages.error(request, "You are not allowed"
+                                "to edit this testimonial.")
         return redirect('testimonial_list')
 
     if request.method == 'POST':
@@ -56,7 +62,9 @@ def edit_testimonial(request, testimonial_id):
             testimonial.is_approved = False
             testimonial.save()
 
-            messages.success(request, "Your testimonial was updated! We need to approve this again before showing it on our site. Thank you!")
+            messages.success(request, "Your testimonial was updated!"
+                                      "We need to approve this again before"
+                                      "showing it on our site. Thank you!")
             return redirect('testimonial_list')
     else:
         form = TestimonialForm(instance=testimonial)
@@ -73,14 +81,15 @@ def delete_testimonial(request, testimonial_id):
     testimonial = get_object_or_404(Testimonial, id=testimonial_id)
 
     if testimonial.user != request.user:
-        messages.error(request,"You are not allowed to delete this testimonial.")
+        messages.error(request, "You are not allowed to delete this"
+                                "testimonial")
         return redirect('testimonial_list')
-    
+
     if request.method == 'POST':
         testimonial.delete()
         messages.success(request, "Successfully deleted testimonial")
         return redirect('testimonial_list')
-    
+
     template = 'testimonials/delete_testimonial.html'
     context = {'testimonial': testimonial}
     return render(request, template, context)
