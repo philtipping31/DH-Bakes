@@ -132,12 +132,19 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """Delete a product in the DH Bakes store"""
+    """A view to handle deleting an existing product"""
+
+    product = get_object_or_404(Product, pk=product_id)
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do this')
         return redirect(reverse('home'))
-        
-    product = get_object_or_404(Product, pk=product_id)
-    product.delete()
-    messages.success(request, f'{product.name} successfully deleted')
-    return redirect(reverse('products'))
+    
+    if request.method == 'POST':
+        product.delete()
+        messages.success(request, "Successfully deleted product")
+        return redirect('add_product')
+    
+    template = 'products/delete_product.html'
+    context = {'product': product}
+    return render(request, template, context)
