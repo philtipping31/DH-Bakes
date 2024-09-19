@@ -123,3 +123,13 @@ Most errors were due to spacing and lines to long, all of these were resolved. B
 | [models.py](http://models.py/)                   | CI Python Linter Shows No Errors | CI Python Linter Shows No Errors                                                                                                                                                                                                                                                                       | Pass   |
 | [urls.py](http://urls.py/)                       | CI Python Linter Shows No Errors | CI Python Linter Shows No Errors                                                                                                                                                                                                                                                                       | Pass   |
 | [views.py](http://views.py/)                     | CI Python Linter Shows No Errors | CI Python Linter Shows No Errors                                                                                                                                                                                                                                                                       | Pass   |
+
+
+
+## User Story Testing
+
+
+## Manual Tests throughout the site
+
+
+## Bugs/Issues
