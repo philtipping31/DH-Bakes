@@ -44,7 +44,7 @@
     <li class="list-inline-item">
         <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-pink{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
             <div class="text-center">
-                <div><i class="text-pink fas fa-cart-shopping fa-lg"></i></div>
+                <div><i class="text-pink fas fa-bag-shopping fa-lg"></i></div>
                 <p class="text-pink my-0">
                     {% if grand_total %}
                         £{{ grand_total|floatformat:2 }}
