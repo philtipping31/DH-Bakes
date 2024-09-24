@@ -180,6 +180,15 @@ Most errors were due to spacing and lines to long, all of these were resolved. B
 | [User Story 27](https://github.com/philtipping31/DH-Bakes/issues/27) | Robots.txt file is added                                                                                                                                                   | Robots.txt file is added to IDE                                                                                                                                                                                                | robots.txt file added                                                                                                                                                                                                                                                               | Pass               |
 | [User Story 27](https://github.com/philtipping31/DH-Bakes/issues/27) | sitemaps.xml has been added                                                                                                                                                | sitemaps.xml has been added to IDE                                                                                                                                                                                             | sitemaps file added                                                                                                                                                                                                                                                                 | Pass               |
 
+## Other Tests
+
+The site has been tested on an iPhone13 Pro to check that the Chrome Dev tools responsiveness options are correct and to check that a site visitor can view the website and all pages with ease on a mobile device.
+
+All links/buttons have been tested to ensure that the user can navigate around the site as the intend.
+
+Check that toast messages show up to the user when they perform actions that require user notifications.
+
+Security testing - ensure users without an account / ownership of content / admin access can't access pages using the URL necessary, implementing the 403 page for better UX
 
 
 ## Bugs/Issues
