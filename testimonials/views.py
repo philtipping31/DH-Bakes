@@ -43,7 +43,6 @@ def add_testimonial(request):
     return render(request, template, context)
 
 
-@login_required
 def edit_testimonial(request, testimonial_id):
     """A view to handle editing an existing testimonial.
     Edited testimonial will go back to waiting approval after submitting."""
@@ -51,9 +50,8 @@ def edit_testimonial(request, testimonial_id):
     testimonial = get_object_or_404(Testimonial, id=testimonial_id)
 
     if testimonial.user != request.user:
-        messages.error(request, "You are not allowed"
-                                "to edit this testimonial.")
-        return redirect('testimonial_list')
+        messages.error(request, "You are not allowed to edit this testimonial.")
+        return HttpResponseForbidden(render(request, '403.html'))
 
     if request.method == 'POST':
         form = TestimonialForm(request.POST, instance=testimonial)
@@ -62,9 +60,7 @@ def edit_testimonial(request, testimonial_id):
             testimonial.is_approved = False
             testimonial.save()
 
-            messages.success(request, "Your testimonial was updated!"
-                                      "We need to approve this again before"
-                                      "showing it on our site. Thank you!")
+            messages.success(request, "Your testimonial was updated! We need to approve this again before showing it on our site. Thank you!")
             return redirect('testimonial_list')
     else:
         form = TestimonialForm(instance=testimonial)
@@ -74,16 +70,14 @@ def edit_testimonial(request, testimonial_id):
     return render(request, template, context)
 
 
-@login_required
 def delete_testimonial(request, testimonial_id):
     """A view to handle deleting an existing testimonial"""
 
     testimonial = get_object_or_404(Testimonial, id=testimonial_id)
 
     if testimonial.user != request.user:
-        messages.error(request, "You are not allowed to delete this"
-                                "testimonial")
-        return redirect('testimonial_list')
+        messages.error(request, "You are not allowed to delete this testimonial.")
+        return HttpResponseForbidden(render(request, '403.html'))
 
     if request.method == 'POST':
         testimonial.delete()
