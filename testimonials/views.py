@@ -50,7 +50,8 @@ def edit_testimonial(request, testimonial_id):
     testimonial = get_object_or_404(Testimonial, id=testimonial_id)
 
     if testimonial.user != request.user:
-        messages.error(request, "You are not allowed to edit this testimonial.")
+        messages.error(request,
+                       "You are not allowed to edit this testimonial.")
         return HttpResponseForbidden(render(request, '403.html'))
 
     if request.method == 'POST':
@@ -60,7 +61,9 @@ def edit_testimonial(request, testimonial_id):
             testimonial.is_approved = False
             testimonial.save()
 
-            messages.success(request, "Your testimonial was updated! We need to approve this again before showing it on our site. Thank you!")
+            messages.success(request, "Your testimonial was updated!"
+                             "We need to approve this again before showing"
+                             "it on our site. Thank you!")
             return redirect('testimonial_list')
     else:
         form = TestimonialForm(instance=testimonial)
@@ -76,7 +79,8 @@ def delete_testimonial(request, testimonial_id):
     testimonial = get_object_or_404(Testimonial, id=testimonial_id)
 
     if testimonial.user != request.user:
-        messages.error(request, "You are not allowed to delete this testimonial.")
+        messages.error(request,
+                       "You are not allowed to delete this testimonial.")
         return HttpResponseForbidden(render(request, '403.html'))
 
     if request.method == 'POST':
