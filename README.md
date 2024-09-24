@@ -14,3 +14,55 @@ DH Bakes is built with responsive design in mind and can be used on a variety of
 
 The Live Site can be found [Here](https://dh-bakes-e0dca18717d0.herokuapp.com/)
 
+
+
+## User Experience (UX)
+
+### Site User Goals
+
+#### Returning User UX
+
+
+## Business Model
+
+
+## Marketing
+
+### Socials
+
+### Mailchimp
+
+### SEO
+
+
+## Agile Working
+
+
+## Site Design
+
+### Wireframes
+
+### Colour Scheme
+
+### Database Schema
+
+
+## Site Security
+
+
+## Testing
+
+
+## Features
+
+### Features not yet implemented
+
+
+## Deployment
+
+
+## Technologies and Programmes used
+
+
+## Credits and Acknowledgments
+

@@ -180,9 +180,6 @@ Most errors were due to spacing and lines to long, all of these were resolved. B
 | [User Story 27](https://github.com/philtipping31/DH-Bakes/issues/27) | Robots.txt file is added                                                                                                                                                   | Robots.txt file is added to IDE                                                                                                                                                                                                | robots.txt file added                                                                                                                                                                                                                                                               | Pass               |
 | [User Story 27](https://github.com/philtipping31/DH-Bakes/issues/27) | sitemaps.xml has been added                                                                                                                                                | sitemaps.xml has been added to IDE                                                                                                                                                                                             | sitemaps file added                                                                                                                                                                                                                                                                 | Pass               |
 
-## Manual Tests throughout the site
-
-
 
 
 ## Bugs/Issues
