@@ -391,11 +391,23 @@ Users can request password resets easily and also signup and confirm their email
 ![Forgot Password](readmedocs/screenshots/forgot-password.png)
 
 
-### 400, 403 and 500 pages
+### 403, 404 and 500 pages
 
+Additional pages were added for 403, 404 and 500 errors. Allowing better UX to navigate back to the home page if a user tries to perform an action they're not authorised to perform, enter a URL that does not exist, or if there is a server error from the site side.
 
+![403](readmedocs/screenshots/403.png)
+
+![404](readmedocs/screenshots/404.png)
+
+![500](readmedocs/screenshots/500.png)
 
 ### Emails
+
+Emails have been configured within the site to send actual emails for Sign Up Purposes, Email Confirmation, Password Resets and Orders. If an actual email address is entered for any of these processes the customer will receive an email into their inbox.
+
+![Order Email](readmedocs/screenshots/order-confirmation-email.png)
+
+![Password reset email](readmedocs/screenshots/password-reset-email.png)
 
 ### Mobile and Tablet
 
