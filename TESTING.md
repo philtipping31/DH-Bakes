@@ -190,6 +190,47 @@ Check that toast messages show up to the user when they perform actions that req
 
 Security testing - ensure users without an account / ownership of content / admin access can't access pages using the URL necessary, implementing the 403 page for better UX
 
+### Responsiveness 
+
+As above, chrome dev tools responsive option was used throughout the development of this site, ensure a mobile first approach was taken. The site can be used as normal on mobiles/tablets as well as large laptop screens.
+
+Mobile and Tablet views:
+
+Home Page
+
+![Mobile Home](readmedocs/screenshots/mobile-home.png)
+
+Mobile Products 
+
+![Mobile Products](readmedocs/screenshots/mobile-products.png)
+
+Mobile Product View 
+
+![Mobile Product View](readmedocs/screenshots/mobile-product-view.png)
+
+Mobile Menu
+
+![Mobile Menu](readmedocs/screenshots/mobile-menu.png)
+
+Bag Preview
+
+![Bag Preview](readmedocs/screenshots/mobile-bag-preview.png)
+
+Mobile Bag
+![Mobile Bag](readmedocs/screenshots/mobile-bag.png)
+
+Mobile Checkout
+
+![Mobile Checkout](readmedocs/screenshots/mobile-checkout.png)
+
+Tablet Recipe
+
+![Tablet Recipe](readmedocs/screenshots/tablet-recipe.png)
+
+Tablet FAQ's
+
+![Tablet Faqs](readmedocs/screenshots/tablet-faqs.png)
+
 
 ## Bugs/Issues
 

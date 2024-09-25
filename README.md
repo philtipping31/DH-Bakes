@@ -154,6 +154,12 @@ Trying to add a product when you are not an admin user - this directs the user t
 
 ![Error message](readmedocs/screenshots/security-error.png)
 
+
+### Input Validation
+
+Django Crispy forms is a useful tool used for adding posts on the website. The built in form allows for validating the form to ensure that fields are correctly filled out with the correct information and not left empty if required.
+
+
 ## Testing
 
 Site testing can be found in [TESTING.md](https://github.com/philtipping31/DH-Bakes/blob/main/TESTING.md)
@@ -163,37 +169,224 @@ Site testing can be found in [TESTING.md](https://github.com/philtipping31/DH-Ba
 
 ### Navbar
 
+The nav bar is available on all pages allowing easy access and navigation around the site on all pages. Nav items consist of drop downs to condense items into sections and allow more accurate direction for the user.
+
+The nav bar collapses for tablets and mobiles with the addition of a home link as the on large screens the logo takes the user back to 'Home'
+
+![Navabr](readmedocs/screenshots/navbar.png)
+
 ### Search Bar
+
+The search bar is part of the navbar and allows users to search for keywords that are found in the products name or description. 
+
+If an invalid search appears, the user is notified.
+
+![Empty Search](readmedocs/screenshots/empty-search.png)
+
+If nothing is found based off of their search, the user can see no results
+
+![No Results search](readmedocs/screenshots/search-not-found.png)
+
+If there is a match, items will display accordingly.
+
+![Search Match](readmedocs/screenshots/search-match.png)
 
 ### Home Page / Mailchimp
 
+The home page shows the site visitor details of what the site is about, ensuring the user is informed from the get go.
+
+The sign up to offers etc is also on the home page to allow site visitors to enter their email address to receive updates and offers from the store.
+
+![Home Page](readmedocs/screenshots/home-page.png)
+
 ### All Products
+
+The all products view shows a list of all current products on store. Each product shows it's image, price, category and rating for the user to see before selecting it.
+
+![All Products](readmedocs/screenshots/all-products.png)
+
+The All Products nav drop down gives some other options in which the customer can view the product list.
+
+![Nav dropdown](readmedocs/screenshots/nav-dropdown.png)
+
+A nice addition is the back to top button which only appears after a user has scrolled down the page. Giving a quick option to get back to the top of the page.
+
+![Back to top](readmedocs/screenshots/back-to-top.png)
+
+### Individual Product View
+
+Each product can be clicked on to to view in more detail. The customer can see more info and add to their bag if they want to purchase it. This page also allows the user to add a quantity of the item as well.
+
+![Product Detail](readmedocs/screenshots/product-detail.png)
+
 
 ### Filters and Categories
 
+In addition to the all products nav drop down options, there are further options for sorting on the product list to allow customers to view our products in a variety of orders.
+
+![Filters](readmedocs/screenshots/allproduct-filter.png)
+
+![High to low filter](readmedocs/screenshots/high-to-low.png)
+
 ### Recipes
+
+The recipes page shows some favorite recipes that other bakers can use to try an recreate some of DH Bakes cakes/cookies themselves. Pagination was used to have one recipe per page, with an addition of a search bar allowing users to search for particular recipes easily.
+
+![Recipes](readmedocs/screenshots/recipes.png)
+
+Search facility:
+
+![Recipe Search](readmedocs/screenshots/recipe-search.png)
+
+Pages:
+
+![Recipe Pages](readmedocs/screenshots/recipes-pages.png)
 
 ### Contact Us
 
+The contact us form was added so all site users were able to send in enquiries to the DH Bakes team. Allowing general questions or some other options to categorise their query.
+
+![Contact us](readmedocs/screenshots/contact-form.png)
+
+![Contact Category](readmedocs/screenshots/contact-category.png)
+
+All messages arrive in the Django Admin site for admin users to look at and messages display letting the user know their enquiry was sent. 
+
+![Form message](readmedocs/screenshots/message-contact.png)
+
+Form errors will also show if the form is sent with missing or incorrect info.
+
+![Error Contact Form](readmedocs/screenshots/name-error-contact.png)
+
+![Email error form](readmedocs/screenshots/email-error.png)
+
+
 ### Testimonials
+
+Testimonials were added to allow site visitors to see past customers experiences. It also allows users to submit their own testimonials to the site. 
+
+Testimonials only show on site once approved by admin. 
+
+A logged in user will be able to see 'Edit' and 'Delete' options on their own Testimonials, allowing them to update a message (this will await approval once edited) or delete their testimonial from the site.
+
+![Testimonials](readmedocs/screenshots/testimonials.png)
+
+![Add Testimonial](readmedocs/screenshots/add-testimonial.png)
+
+![Testimonial Message](readmedocs/screenshots/testimonial-message.png)
+
+Editing Testimonial
+
+![Edit Testimonial](readmedocs/screenshots/edit-testimonial.png)
+
+Deleting Testimonial - clicking delete on a users testimonial takes them to a page to confirm this before actually deleting it.
+
+![Delete Testimonial](readmedocs/screenshots/delete-testimonial.png)
 
 ### FAQ's
 
+The FAQ's page is a location where site users can visit to find out information about a variety of things that they may want to know about. If something is missing a link to the contact us form can be found on the page allowing the user to send in a question.
+
+Answers are hidden but can be revealed by clicking on the question banner.
+
+![FAQs](readmedocs/screenshots/FAQs.png)
+
 ### Shopping Bag
+
+The shopping bag allows the user to visit at anytime to review products that they have added to their cart.
+
+It shows each item, with the ability to increase the quantity and/or remove items. It gives a break down of cost and adds the delivery onto the amount. 
+
+![Shopping Bag](readmedocs/screenshots/shopping-bag.png)
+
+Each time an item is added to the bag, a bag preview is displayed to the user.
+
+![Bag Preview](readmedocs/screenshots/bag-preview.png)
+
+Additional keep shopping buttons are placed on various pages including this one to allow the user to easily go back to looking at all the store products.
+
+The bag has been coded differently to look suitable on smaller screens as well.
+
+![Mobile Bag View](readmedocs/screenshots/mobile-bag-view.png)
 
 ### Checkout
 
-### Orders
+Once a user has added their items to their bag, they can go to the Secure Checkout. This allows the user to enter their delivery info (this pre-populates if the user has a profile setup with delivery info added) and add their card number.
+
+A preview of their order will also be shown.
+
+![Checkout](readmedocs/screenshots/checkout.png)
+
+Delivery details can be selected to be saved to the profile if a user is logged in. If not the message will change to ask the user to Sign in or Sign Up to save their details.
+
+![Save to profile](readmedocs/screenshots/save-to-profile.png)
+
+![Sign in to Save](readmedocs/screenshots/signin-to-save.png)
+
+Once the order is placed, the order confirmation screen is then shown to the customer along with a message popup.
+
+![Order Confirmation](readmedocs/screenshots/order-confirmation.png)
+
+![Order Message](readmedocs/screenshots/order-message.png)
 
 ### Profile Page
 
+This a page for a logged in user to add/see their contact/delivery info and any previous orders if they have place any.
+
+![Profile Page](readmedocs/screenshots/profile-page.png)
+
+#### Order History
+
+If a user has a profile they can go to their profile and view a list of their previous orders. Each order has a order number link which will take them to a view of their previous order confirmation that would have been emailed to them.
+
+![Order History](readmedocs/screenshots/order-history.png)
+
+![Prev order confirmation](readmedocs/screenshots/previous-order.png)
+
+#### Delivery info
+
+If a user has a profile they can also add their default delivery info that can pre populate when they check out. Changes can be made and updated when required.
+
+![Delivery Details](readmedocs/screenshots/delivery-details.png)
+
+
 ### Product Management
+
+As a site owner or admin user, product management becomes an option from the My Account drop down. This allows store owners to add items directly to the store from the site, view a list of existing products with the option to edit/update them or delete them from the store.
+
+![Product Management](readmedocs/screenshots/product-management.png)
+
+When editing a product, a message will show to the owner about what they are doing.
+
+![Product Edit Message](readmedocs/screenshots/edit-product-message.png)
+
+If delete is clicked, the user is able to confirm the deletion of a product before it actually gets removed.
+
+![Delete product](readmedocs/screenshots/delete-product.png)
 
 ### Messages
 
+Toast messages are shown throughout the site for various actions as shown above in other feature sections. This is to allow users a better experience, allowing them to be notified when certain things happen, like items added to their bag, logging in or out of an account, order confirmation numbers, incorrect search criteria or actions perfromed etc.
+
+These errors have different colour banners to correspond with the message type.
+
+![Sign-in message](readmedocs/screenshots/sign-in-message.png)
+
+### Footer
+
+The footer is shown on all pages with links to Github and DH Bakes Social Media accounts as well as the privacy policy. All items are aria-labeled for screen readers, with relevant rel attributes an open in a new tab for better UX.
+
+
+
 ### Login / Logout / Signup
 
+### 400, 403 and 500 pages
 
+### Emails
+
+### Mobile and Tablet
+
+Screenshots of responsive design can be found in the [TESTING.md](https://github.com/philtipping31/DH-Bakes/blob/main/TESTING.md) Responsiveness section.
 
 ### Features not yet implemented
 
@@ -537,8 +730,8 @@ EMAIL_HOST_USER = your Gmail email address.
 - Google Fonts - Used for the font style throughout the website
 - Bulma - Icon CSS
 - Bootstrap - Used for easy CSS throughout the site
-- Kaggle(https://www.kaggle.com/datasets/rajkumarl/cakey-bakey?resource=download&select=182.jpg) - Used for some of the bake images
-- Pexels(https://www.pexels.com/photo/cupcakes-with-pink-cream-on-a-white-countertop-25003162/) - Used for the home page background
+- [Kaggle](https://www.kaggle.com/datasets/rajkumarl/cakey-bakey?resource=download&select=182.jpg) - Used for some of the bake images
+- [Pexels](https://www.pexels.com/photo/cupcakes-with-pink-cream-on-a-white-countertop-25003162/) - Used for the home page background
 - Janes Patisserie - Recipes were taken from this website and added on our own website recipes page
 - Favicon.io - Used to convert the DH Bakes logo to a favicon
 - Wordstream - To help locate good keywords to use in meta tags
