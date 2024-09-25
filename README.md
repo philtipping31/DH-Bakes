@@ -376,9 +376,20 @@ These errors have different colour banners to correspond with the message type.
 
 The footer is shown on all pages with links to Github and DH Bakes Social Media accounts as well as the privacy policy. All items are aria-labeled for screen readers, with relevant rel attributes an open in a new tab for better UX.
 
-
+![Footer](readmedocs/screenshots/footer.png)
 
 ### Login / Logout / Signup
+
+The login/logout/signup pages along with the other AllAuth templates used have been styled to flow with the style of the DH Bakes Website.
+
+Users can request password resets easily and also signup and confirm their email address.
+
+![Sign In](readmedocs/screenshots/sign-in.png)
+
+![Sign up](readmedocs/screenshots/sign-up.png)
+
+![Forgot Password](readmedocs/screenshots/forgot-password.png)
+
 
 ### 400, 403 and 500 pages
 
