@@ -109,11 +109,19 @@ As things occurred during the project, other items would be introduced and re-pr
 
 The base design was inspired by the Code Insitute Boutique Ado walkthrough, however there were other styling changes added to make this different and consist of a better UX and UI. The nav bar and footer show on all pages along with the search bar. The colour scheme / buttons / text / shadow boxes are all consistent throughout.
 
+DH Bakes is an aesthetically pleasing site to view, keeping a clean white base colour with dark pink accents. The use of Font Awesome icons throughout add an better visual experience for users. 
+
 ### Wireframes
 
 Wireframes were created to give me an idea on how i'd like various pages to look at along with URL setup before the project code was started.
 
-*ADD WIRE FRAMES HERE*
+![Wireframe 1](readmedocs/designs/home-wrireframe.png)
+
+![Wireframe 2](readmedocs/designs/products-wireframe.png)
+
+![Wireframe 3](readmedocs/designs/product-info-wireframe.png)
+
+![Wireframe 4](readmedocs/designs/add-product-wrireframe.png)
 
 ### Colour Scheme
 
@@ -128,7 +136,7 @@ Image was created using [Coolors](https://coolors.co/ab0368-cb047c-ffffff-f0f0f0
 
 An entity relationship diagram was created using [DBeaver](https://dbeaver.io/) and shows the schemas for each of the models and how they are related.
 
-*ADD ENTITY DIAGRAM HERE*
+![ERD](readmedocs/designs/erd.png)
 
 
 ## Site Security
@@ -153,9 +161,47 @@ Site testing can be found in [TESTING.md](https://github.com/philtipping31/DH-Ba
 
 ## Features
 
-*ADD FEATURES HERE*
+### Navbar
+
+### Search Bar
+
+### Home Page / Mailchimp
+
+### All Products
+
+### Filters and Categories
+
+### Recipes
+
+### Contact Us
+
+### Testimonials
+
+### FAQ's
+
+### Shopping Bag
+
+### Checkout
+
+### Orders
+
+### Profile Page
+
+### Product Management
+
+### Messages
+
+### Login / Logout / Signup
+
+
 
 ### Features not yet implemented
+
+Most of the features I set out to add were added to the website. 
+
+I'd like to add a feature for collection of items. This would allow users to bypass the delivery option with a checkbox and remove the need for delivery info on checkout. Allowing the customer to collect their items from the bakery.
+
+I'd also like to add full CRUD for all options as a store owner, including, Recipes / FAQ's / Approving Testimonials / Dealing with enquiries etc all from the front end site.
 
 
 ## Deployment and Setup
@@ -480,8 +526,30 @@ EMAIL_HOST_USER = your Gmail email address.
 - stripe==10.9.0 - The official Python library for Stripe, enabling seamless integration with Stripe's payment and subscription services, allowing secure payment handling in web applications.
 
 
-### External Programmes Used
+### External Sites Used
+
+- DBeaver.io - Used to produce ERD
+- Coolors - Used to produce colour chart for website
+- xml-Sitemaps - Used to produce a sitemap.xml for the project
+- Am I responsive - Used to show a mockup of the website on different devices
+- Table to Markdown - Used for tests written in Google Sheets and convert to .md for Readme documentation
+- FontAwesome - For all icons used in the website
+- Google Fonts - Used for the font style throughout the website
+- Bulma - Icon CSS
+- Bootstrap - Used for easy CSS throughout the site
+- Kaggle(https://www.kaggle.com/datasets/rajkumarl/cakey-bakey?resource=download&select=182.jpg) - Used for some of the bake images
+- Pexels(https://www.pexels.com/photo/cupcakes-with-pink-cream-on-a-white-countertop-25003162/) - Used for the home page background
+- Janes Patisserie - Recipes were taken from this website and added on our own website recipes page
+- Favicon.io - Used to convert the DH Bakes logo to a favicon
+- Wordstream - To help locate good keywords to use in meta tags
+- Geeksforgeeks - Used throughout the project when looking for answers regarding various issues encountered
+- Stack Overflow - Used throughout the project when looking for answers regarding various issues encountered
 
 
 ## Credits and Acknowledgments
 
+The Boutique Ado walkthrough project was fundamental in my ability to produce this project. Where there are similarities to the Boutique Ado project, i've done my best to change aspects and add further additions to make this website unique.
+
+The Tutor Team at CI were invaluable during this project, helping me with various issues and problems I faced along the way.
+
+My mentor Daisy for always providing good advice, letting me know how to improve and always being helpful, I could not have done it all without your support!
