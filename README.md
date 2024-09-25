@@ -89,6 +89,10 @@ Mailchimp was added to the sites home page to allow site visitors to add their e
 
 I used an online tool [WordStream](https://tools.wordstream.com/fkt?website=https%3A%2F%2Fdh-bakes-e0dca18717d0.herokuapp.com%2F&cid=&camplink=&campname=&geoflow=0) to help locate keywords to use for my site. There was a mixture of a high and low competition so I used a selection of all that appeared in the results.
 
+Key words were then added into the meta tags of the base.html file:
+
+<meta name="keywords" content="cookies, cakes, cupcakes, baking, bakers, birthdays, chocolate, vanilla, bakery, custom cakes, recipes, sweet things, sweet tooth, freshly baked, custom cookies, desert">
+
 
 ## Agile Working
 
