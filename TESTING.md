@@ -234,4 +234,6 @@ Tablet FAQ's
 
 ## Bugs/Issues
 
-All bugs/issues found during manual testing were fixed and changed in the code to avoid the problem happening further
+I have three contrast issues flagged up on WAVE when testing the project, however I am unable to see where these are so i've had to leave these issues.
+
+All other bugs/issues found during manual testing were fixed and changed in the code to avoid the problem happening further
