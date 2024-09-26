@@ -350,7 +350,7 @@ If a user has a profile they can also add their default delivery info that can p
 ![Delivery Details](readmedocs/screenshots/delivery-details.png)
 
 
-### Product Management
+### Product Management
 
 As a site owner or admin user, product management becomes an option from the My Account drop down. This allows store owners to add items directly to the store from the site, view a list of existing products with the option to edit/update them or delete them from the store.
 
