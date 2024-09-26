@@ -104,6 +104,67 @@ As things occurred during the project, other items would be introduced and re-pr
 
 ![User Story Board](readmedocs/screenshots/github-board.png)
 
+### User Stories & EPICS
+
+User stories were created to help plan the project development. I assigned each user story to a sprint to ensure items were worked on at appropriate times and to plan the workload over the course of building the site before submission day.
+
+Each user story was assigned a Milestone to allow further breakdown of user stories into each associated EPIC.
+
+EPICS:
+
+- Admin Usage - EPIC for Admin Product Management direct from the store. Other Admin use is done via the Django Admin Panel
+    - [User Story 13](https://github.com/philtipping31/DH-Bakes/issues/13)
+
+- Authentication - EPIC for AllAuth, login/logout, account registration, emails
+    - [User Story 12](https://github.com/philtipping31/DH-Bakes/issues/12)
+    - [User Story 3](https://github.com/philtipping31/DH-Bakes/issues/5)
+    - [User Story 5](https://github.com/philtipping31/DH-Bakes/issues/3)
+
+- Checkout/Bag - EPIC For user stories linked with bag access, checkout and payments
+    - [User Story 9](https://github.com/philtipping31/DH-Bakes/issues/9)
+    - [User Story 8](https://github.com/philtipping31/DH-Bakes/issues/8)
+    - [User Story 11](https://github.com/philtipping31/DH-Bakes/issues/11)
+    - [User Story 23](https://github.com/philtipping31/DH-Bakes/issues/23)
+    - [User Story 24](https://github.com/philtipping31/DH-Bakes/issues/24)
+
+- Deployment - EPIC for deploying the site to Heroku
+    - [User Story 28](https://github.com/philtipping31/DH-Bakes/issues/28)
+    - [User Story 30](https://github.com/philtipping31/DH-Bakes/issues/30)
+
+- Info - EPICS for the Info dropdown (Contact, FAQs & Testimonials)
+    - [User Story 15](https://github.com/philtipping31/DH-Bakes/issues/15)
+    - [User Story 16](https://github.com/philtipping31/DH-Bakes/issues/16)
+    - [User Story 14](https://github.com/philtipping31/DH-Bakes/issues/14)
+
+- Products - EPIC For products, viewing, lists, sorting, categories etc.
+    - [User Story 7](https://github.com/philtipping31/DH-Bakes/issues/7)
+    - [User Story 22](https://github.com/philtipping31/DH-Bakes/issues/22)
+    - [User Story 4](https://github.com/philtipping31/DH-Bakes/issues/4)
+    - [User Story 1](https://github.com/philtipping31/DH-Bakes/issues/1)
+    - [User Story 2](https://github.com/philtipping31/DH-Bakes/issues/2)
+
+- Profile - EPIC for the profile page
+    - [User Story 10](https://github.com/philtipping31/DH-Bakes/issues/10)
+
+- Recipes - EPIC For the recipes section
+    - [User Story 17](https://github.com/philtipping31/DH-Bakes/issues/17)
+
+- Setup - EPIC For the base setup of the webpage
+    - [User Story 21](https://github.com/philtipping31/DH-Bakes/issues/21)
+    - [User Story 6](https://github.com/philtipping31/DH-Bakes/issues/6)
+
+- Social Media/Marketing - EPIC for social media page, SEO/Meta Tags, Mailchimp
+    - [User Story 27](https://github.com/philtipping31/DH-Bakes/issues/27)
+    - [User Story 19](https://github.com/philtipping31/DH-Bakes/issues/19)
+    - [User Story 18](https://github.com/philtipping31/DH-Bakes/issues/18)
+
+- Status Errors - EPIC For all status error pages
+    - [User Story 20](https://github.com/philtipping31/DH-Bakes/issues/20)
+
+- Testing and Documentation - EPIC For Testing and Readme documentation
+    - [User Story 25](https://github.com/philtipping31/DH-Bakes/issues/25)
+    - [User Story 26](https://github.com/philtipping31/DH-Bakes/issues/26)
+
 
 ## Site Design
 
@@ -444,6 +505,17 @@ Add the environment variables from env.py and other items added in settings.py t
 Add DISABLE_COLLECTSTATIC and set it to 1 to disable, or 0 if the app is ready for static file collection.
 Add all other relevant config vars to the site to ensure it operates correctly:
 
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+DATABASE_URL
+EMAIL_HOST_PASS
+EMAIL_HOST_USER
+SECRET_KEY
+STRIPE_PUBLIC_KEY
+STRIPE_SECRET_KEY
+STRIPE_WH_SECRET
+USE_AWS
+
 Deploy:
 
 In the 'Deploy' tab, select the branch you want to deploy (usually main) and click 'Deploy Branch'.
@@ -771,3 +843,5 @@ The Boutique Ado walkthrough project was fundamental in my ability to produce th
 The Tutor Team at CI were invaluable during this project, helping me with various issues and problems I faced along the way.
 
 My mentor Daisy for always providing good advice, letting me know how to improve and always being helpful, I could not have done it all without your support!
+
+My Fiance for always giving me that extra push when I needed it and for always telling me to stick with it. 
