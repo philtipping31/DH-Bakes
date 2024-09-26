@@ -505,16 +505,16 @@ Add the environment variables from env.py and other items added in settings.py t
 Add DISABLE_COLLECTSTATIC and set it to 1 to disable, or 0 if the app is ready for static file collection.
 Add all other relevant config vars to the site to ensure it operates correctly:
 
-AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY
-DATABASE_URL
-EMAIL_HOST_PASS
-EMAIL_HOST_USER
-SECRET_KEY
-STRIPE_PUBLIC_KEY
-STRIPE_SECRET_KEY
-STRIPE_WH_SECRET
-USE_AWS
+AWS_ACCESS_KEY_ID - The access key ID for an AWS user
+AWS_SECRET_ACCESS_KEY - The secret access key for an AWS user
+DATABASE_URL - The connection string for the database provided by CI
+EMAIL_HOST_PASS - The password for the email account used by the application to send emails
+EMAIL_HOST_USER - The username or email address used by the application to authenticate to the email host when sending emails.
+SECRET_KEY - A secret key required by the application
+STRIPE_PUBLIC_KEY - The public API key provided by Stripe for interacting with its payment system
+STRIPE_SECRET_KEY - The secret key required by Stripe for secure payments
+STRIPE_WH_SECRET - Stripes Webhook Secret Key
+USE_AWS - Set to true to use AWS hosting
 
 Deploy:
 
